@@ -4,6 +4,7 @@ import java.util.Arrays;
 import util.Arquivo;
 import util.Lista;
 import util.RegistroArq;
+import util.RegistroOrdenado;
 
 public abstract class Algoritmo
 {
@@ -56,6 +57,7 @@ public abstract class Algoritmo
 
     public final void OrdenaArquivo()
     {
+        registro = new RegistroOrdenado(0, 0, 0, 0, 0);
         registro.iniciaValores();
         long ini = System.currentTimeMillis();
         sortedArquivo();

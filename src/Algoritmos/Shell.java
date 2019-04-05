@@ -24,6 +24,9 @@ import util.RegistroArq;
 public class Shell extends Algoritmo
 {
 
+    public Shell() {
+    }
+
     public Shell(Lista lista, int[] vet, int TL, Registro registro)
     {
         super(lista, vet, TL, registro);

@@ -10,6 +10,10 @@ import util.RegistroArq;
 public class Count extends Algoritmo
 {
 
+    public Count() 
+    {
+    }
+    
     public Count(Lista lista, int[] vet, int TL, Registro registro)
     {
         super(lista, vet, TL, registro);

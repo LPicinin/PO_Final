@@ -22,6 +22,10 @@ import util.RegistroArq;
 public class Comb extends Algoritmo
 {
 
+    public Comb() 
+    {
+    }
+    
     public Comb(Lista lista, int[] vet, int TL, Registro registro)
     {
         super(lista, vet, TL, registro);

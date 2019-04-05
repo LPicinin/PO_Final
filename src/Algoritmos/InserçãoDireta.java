@@ -70,7 +70,8 @@ public class InserçãoDireta extends Inserção
             arquivo.seekArq(pos - 1);
             vet.leDoArq(arquivo.getFile());
             registro.sumMovProg(2);//moveu para i e j
-
+            
+            registro.incCompProg();
             while (pos > 0 && aux.getCodigo() < vet.getCodigo())
             {
                 registro.incCompProg();

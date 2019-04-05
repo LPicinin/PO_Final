@@ -11,6 +11,9 @@ import util.RegistroArq;
 public class Radix extends Algoritmo
 {
 
+    public Radix() {
+    }
+
     public Radix(Lista lista, int[] vet, int TL, Registro registro)
     {
         super(lista, vet, TL, registro);

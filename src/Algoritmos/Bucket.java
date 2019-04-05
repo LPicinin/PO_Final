@@ -18,6 +18,10 @@ import util.RegistroArq;
 public class Bucket extends Algoritmo
 {
 
+    public Bucket() 
+    {
+    }
+    
     public Bucket(Lista lista, int[] vet, int TL, Registro registro)
     {
         super(lista, vet, TL, registro);
