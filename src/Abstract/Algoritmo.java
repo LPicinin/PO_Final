@@ -43,6 +43,7 @@ public abstract class Algoritmo
 
     public final void OrdenaLista()
     {
+        registro = new RegistroOrdenado(0, 0, 0, 0, 0);
         long ini = System.currentTimeMillis();
         sortedLista();
         registro.setTempo(System.currentTimeMillis() - ini);
@@ -50,6 +51,7 @@ public abstract class Algoritmo
 
     public final void OrdenaVetor()
     {
+        registro = new RegistroOrdenado(0, 0, 0, 0, 0);
         long ini = System.currentTimeMillis();
         sortedVetor();
         registro.setTempo(System.currentTimeMillis() - ini);

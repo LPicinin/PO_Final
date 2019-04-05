@@ -126,5 +126,10 @@ public abstract class Registro
         compProg = compEqua = movProg = movProg = movEqua = 0;
         tempo = 0;
     }
+    public void iniciaEqui(int comp, int mov)
+    {
+        compEqua = comp;
+        movEqua = mov;
+    }
 
 }

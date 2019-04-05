@@ -8,7 +8,11 @@ package po;
 import Abstract.Algoritmo;
 import Algoritmos.*;
 import com.jfoenix.controls.JFXCheckBox;
+import java.awt.Toolkit;
+import java.awt.datatransfer.Clipboard;
+import java.awt.datatransfer.StringSelection;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -79,6 +83,27 @@ public class TelaPrincipalController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         iniciaComponentes();
+        /*InserçãoBinaria ai = new InserçãoBinaria(Util.geraListaReverso(20), Util.geraVetorReverso(20), 20);
+        
+        System.out.println(ai.getLista().toString());
+        ai.OrdenaLista();
+        System.out.println(ai.getLista().toString());
+        */
+        /*
+        System.out.println(Arrays.toString(ai.getVet()));
+        ai.OrdenaVetor();
+        System.out.println(Arrays.toString(ai.getVet()));
+        */
+        /*
+        Arquivo aReverso = new Arquivo("src\\Arquivos\\fileReverso.dat");
+        ai.setArquivo(aReverso);
+        ai.OrdenaArquivo();
+        */
+        /*
+        Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
+        c.setContents(new StringSelection(aReverso.toString()), null);
+        */
+        
         new Thread(new Runnable()
         {
             @Override
@@ -89,11 +114,14 @@ public class TelaPrincipalController implements Initializable
                 tela.setDisable(false);
             }
         }).start();
+        
     }
     
     private void scriptOredacoes()
     {
         String name;
+        int n = 1024;
+        double g = 0.577216;
         Lista l = Util.geraListaRandomico(16);
         int[] v = Util.geraVetorRandomico(16);
         Algoritmo a;
@@ -107,16 +135,22 @@ public class TelaPrincipalController implements Initializable
         name = "Buble";
         a.setArquivo(aOrd);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(n*n-n)/2, 0);
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(n*n-n)/2, (3*(n*n-n))/2);
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(n*n-n)/2, (3*(n*n-n))/4);
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         //Bucket
         iniciaArquivos();
@@ -126,14 +160,17 @@ public class TelaPrincipalController implements Initializable
         a.OrdenaArquivo();
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
+        
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
         
+        
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         
         //Comb
@@ -144,14 +181,17 @@ public class TelaPrincipalController implements Initializable
         a.OrdenaArquivo();
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
+        
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
         
+        
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         
         
@@ -163,14 +203,17 @@ public class TelaPrincipalController implements Initializable
         a.OrdenaArquivo();
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
+        
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
         
+        
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         
         //Gnome
@@ -181,14 +224,17 @@ public class TelaPrincipalController implements Initializable
         a.OrdenaArquivo();
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
+        
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
         
+        
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         
         //Heap
@@ -199,14 +245,17 @@ public class TelaPrincipalController implements Initializable
         a.OrdenaArquivo();
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
+        
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
         
+        
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
 
         //InsercaoBinaria
         iniciaArquivos();
@@ -214,15 +263,19 @@ public class TelaPrincipalController implements Initializable
         name = "InserçãoBinaria";
         a.setArquivo(aOrd);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui(0, 3*(n-1));
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(n*(Math.log10(n)-Math.log10(Math.E)+0.5)), (int)(Math.pow(n, 2)+9*n-10)/4);
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
         
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(n*(Math.log10(n)-Math.log10(Math.E)+0.5)), (int)(Math.pow(n, 2)+3*n-4)/2);
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
         
         //InsercaoDireta
@@ -231,15 +284,18 @@ public class TelaPrincipalController implements Initializable
         name = "InserçãoDireta";
         a.setArquivo(aOrd);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((n-1), (3*(n-1)));
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(Math.pow(n, 2)+n-2)/4, (int)(Math.pow(n, 2)+9*n-10)/4);
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
         
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(Math.pow(n, 2)+n-4)/4,  (int)(Math.pow(n, 2)+3*n-4)/2);
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
         
         
@@ -251,15 +307,14 @@ public class TelaPrincipalController implements Initializable
         a.OrdenaArquivo();
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
+        
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
-        
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
-        
         
         //MergeS
         iniciaArquivos();
@@ -338,15 +393,18 @@ public class TelaPrincipalController implements Initializable
         name = "SelectSort";
         a.setArquivo(aOrd);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(Math.pow(n, 2)-n)/2, 3*(n-1));
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(Math.pow(n, 2)-n)/2, (int)(n*(Math.log10(n)+g)));       
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
         
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(n*n-n)/2, (int)((n*n)/4+(3*(n-1))));
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
         
         
@@ -356,15 +414,18 @@ public class TelaPrincipalController implements Initializable
         name = "Shake";
         a.setArquivo(aOrd);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(n*n-n)/2, 0);
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
         a.setArquivo(aRandom);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(n*n-n)/2, (3*(n*n-n))/2);
         tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
         
         a.setArquivo(aReverso);
         a.OrdenaArquivo();
+        a.getRegistro().iniciaEqui((int)(n*n-n)/2, (3*(n*n-n))/4);
         tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
         
         

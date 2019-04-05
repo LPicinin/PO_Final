@@ -196,7 +196,7 @@ public class MergeP extends Merge
         
         while(k < tl)
         {
-            while(i < tseq && k < tseq)
+            while(i < tseq && j < tseq)
             {
                 registro.incMovProg();
                 arq1.seekArq(i);
@@ -222,23 +222,21 @@ public class MergeP extends Merge
                     j++;
                 }
                 k++;
-                
-                
-                while(i < tseq)
-                {
-                    registro.incMovProg();
-                    arquivo.seekArq(k);
-                    a1.gravaNoArq(arquivo.getFile());
-                    i++; k++;
-                }
-                
-                while(j < tseq)
-                {
-                    registro.incMovProg();
-                    arquivo.seekArq(k);
-                    a2.gravaNoArq(arquivo.getFile());
-                    j++; k++;
-                }
+            }
+            while(i < tseq)
+            {
+                registro.incMovProg();
+                arquivo.seekArq(k);
+                a1.gravaNoArq(arquivo.getFile());
+                i++; k++;
+            }
+
+            while(j < tseq)
+            {
+                registro.incMovProg();
+                arquivo.seekArq(k);
+                a2.gravaNoArq(arquivo.getFile());
+                j++; k++;
             }
             tseq = tseq + seq;
         }
