@@ -8,13 +8,8 @@ package po;
 import Abstract.Algoritmo;
 import Algoritmos.*;
 import com.jfoenix.controls.JFXCheckBox;
-import java.awt.Toolkit;
-import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.StringSelection;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -23,8 +18,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import util.Arquivo;
 import util.Lista;
-import util.RegistroArq;
-import util.RegistroOrdenado;
 import util.Saida;
 import util.Util;
 
@@ -96,27 +89,6 @@ public class TelaPrincipalController implements Initializable
                 tela.setDisable(false);
             }
         }).start();
-        RegistroArq ra = new RegistroArq();
-        Arquivo ar = new Arquivo("src\\Arquivos\\fileReverso.dat");
-
-        /*ar.seekArq(1);
-        ra.leDoArq(ar.getFile());
-        System.out.println(ar.size() + " " + ra.getCodigo());
-
-        Lista l = Util.geraListaRandomico(16);
-        int[] v = Util.geraVetorRandomico(16);
-
-        Algoritmo a = new QuickComPivo(l, v, 10, new RegistroOrdenado(0, 0, 0, 0, 0));
-
-        a.setArquivo(new Arquivo("src\\Arquivos\\fileReverso.dat"));
-
-        a.OrdenaArquivo();
-        System.out.println("Acabou");
-        Clipboard c = Toolkit.getDefaultToolkit().getSystemClipboard();
-        c.setContents(new StringSelection(ar.toString()), null);
-
-        */
-        
     }
     
     private void scriptOredacoes()
