@@ -392,7 +392,6 @@ public class TelaPrincipalController implements Initializable
         name = "Tim";
         a.setArquivo(aOrd);
         a.OrdenaArquivo();
-        a.getRegistro().setCompEqua((int)Math.pow(1024, 2));///
         tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
         a.setArquivo(aRandom);
