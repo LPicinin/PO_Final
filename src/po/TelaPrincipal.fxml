@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -10,9 +11,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="790.0" prefWidth="1263.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="po.TelaPrincipalController">
+<BorderPane fx:id="tela" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="1263.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="po.TelaPrincipalController">
     <center>
-        <ScrollPane BorderPane.alignment="CENTER">
+        <ScrollPane prefHeight="692.0" prefWidth="1263.0" BorderPane.alignment="CENTER">
             <content>
                 <HBox>
                     <children>
@@ -67,8 +68,9 @@
         </ScrollPane>
     </center>
     <bottom>
-        <HBox alignment="CENTER_RIGHT" prefHeight="52.0" prefWidth="1263.0" spacing="25.0" BorderPane.alignment="CENTER">
+        <HBox alignment="CENTER_RIGHT" prefHeight="48.0" prefWidth="1263.0" spacing="25.0" BorderPane.alignment="CENTER">
             <children>
+            <JFXCheckBox fx:id="cbPregerados" text="Pŕé-Gerados" />
                 <JFXButton text="Executar Selecionado" />
                 <JFXButton text="Executar Todos">
                     <HBox.margin>

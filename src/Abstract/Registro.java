@@ -121,6 +121,10 @@ public abstract class Registro
     {
         this.tempo += tempo;
     }
-    
+    public void iniciaValores()
+    {
+        compProg = compEqua = movProg = movProg = movEqua = 0;
+        tempo = 0;
+    }
 
 }

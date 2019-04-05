@@ -158,45 +158,64 @@ public class QuickSemPivo extends Quick
 
         while (i < j)
         {
+            registro.incMovProg();
             arquivo.seekArq(i);
             r.leDoArq(arquivo.getFile());
+            
+            registro.incMovProg();
             arquivo.seekArq(j);
             r2.leDoArq(arquivo.getFile());
 
+            registro.incCompProg();
             while (i < j && r.getCodigo() <= r2.getCodigo())
             {
                 i++;
+                registro.incMovProg();
                 arquivo.seekArq(i);
                 r.leDoArq(arquivo.getFile());
             }
             if (arquivo.posicoesExistes(i, j))
             {
+                registro.incMovProg();
                 arquivo.seekArq(i);
                 r2.gravaNoArq(arquivo.getFile());
+                
+                registro.incMovProg();
                 arquivo.seekArq(j);
                 r.gravaNoArq(arquivo.getFile());
 
+                registro.incMovProg();
                 arquivo.seekArq(i);
                 r.leDoArq(arquivo.getFile());
+                
+                registro.incMovProg();
                 arquivo.seekArq(j);
                 r2.leDoArq(arquivo.getFile());
             }
 
+            registro.incCompProg();
             while (i < j && r2.getCodigo() >= r.getCodigo())
             {
                 j--;
+                registro.incMovProg();
                 arquivo.seekArq(j);
                 r2.leDoArq(arquivo.getFile());
             }
             if (arquivo.posicoesExistes(i, j))
             {
+                registro.incMovProg();
                 arquivo.seekArq(i);
                 r2.gravaNoArq(arquivo.getFile());
+                
+                registro.incMovProg();
                 arquivo.seekArq(j);
                 r.gravaNoArq(arquivo.getFile());
 
+                registro.incMovProg();
                 arquivo.seekArq(i);
                 r.leDoArq(arquivo.getFile());
+                
+                registro.incMovProg();
                 arquivo.seekArq(j);
                 r2.leDoArq(arquivo.getFile());
             }

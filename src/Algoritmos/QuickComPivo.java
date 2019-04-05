@@ -144,17 +144,21 @@ public class QuickComPivo extends Quick
         int i = low - 1;
         RegistroArq pivo = new RegistroArq();
         RegistroArq vet = new RegistroArq();
+        registro.incMovProg();
         arquivo.seekArq(high);
         pivo.leDoArq(arquivo.getFile());
 
         for (int j = low; j < high; j++)
         {
+            registro.incMovProg();
             arquivo.seekArq(j);
             vet.leDoArq(arquivo.getFile());
+            registro.incCompProg();
             if (vet.getCodigo() <= pivo.getCodigo())
             {
                 i++;
                 Util.swap(i, j, arquivo);
+                registro.sumMovProg(2);
             }
         }
         Util.swap(high, i + 1, arquivo);

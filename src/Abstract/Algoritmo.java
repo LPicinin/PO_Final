@@ -56,6 +56,7 @@ public abstract class Algoritmo
 
     public final void OrdenaArquivo()
     {
+        registro.iniciaValores();
         long ini = System.currentTimeMillis();
         sortedArquivo();
         registro.setTempo(System.currentTimeMillis() - ini);
