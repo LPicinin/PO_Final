@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import util.Arquivo;
 import util.Lista;
@@ -74,8 +75,6 @@ public class TelaPrincipalController implements Initializable
     private TableColumn<Saida, Long> tempoRand;
     @FXML
     private TableColumn<Saida, Integer> compProgOrd;
-    @FXML
-    private JFXCheckBox cbPregerados;
     @FXML
     private BorderPane tela;
 
@@ -501,5 +500,14 @@ public class TelaPrincipalController implements Initializable
         o.add(new Saida("Merge", new RegistroOrdenado(90, 70, 6, 1, 21)));
         tabelaOrdenada.setItems(o);
         */
+    }
+
+    @FXML
+    private void evtCopy(MouseEvent event) 
+    {
+        /*StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < tabelaOrdenada.getItems().size(); i++) {
+            
+        }*/
     }
 }
