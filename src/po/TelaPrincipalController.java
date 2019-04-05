@@ -121,6 +121,7 @@ public class TelaPrincipalController implements Initializable
     
     private void scriptOredacoes()
     {
+        String name;
         Lista l = Util.geraListaRandomico(16);
         int[] v = Util.geraVetorRandomico(16);
         Algoritmo a;
@@ -128,205 +129,309 @@ public class TelaPrincipalController implements Initializable
         Arquivo aReverso = new Arquivo("src\\Arquivos\\fileReverso.dat");
         Arquivo aRandom = new Arquivo("src\\Arquivos\\fileRandom.dat");
         
-        //Quick com pivo
-        iniciaArquivos();
-        a = new Tim();///////////////////////////aqui
-        
-        a.setArquivo(aOrd);
-        a.OrdenaArquivo();
-        tabelaOrdenada.getItems().add(new Saida("Quick com Pivo", a.getRegistro()));
-        
-        a.setArquivo(aRandom);
-        a.OrdenaArquivo();
-        tabelaRandom.getItems().add(new Saida("Quick com Pivo", a.getRegistro()));
-        
-        
-        a.setArquivo(aReverso);
-        a.OrdenaArquivo();
-        tabelaReversa.getItems().add(new Saida("Quick com Pivo", a.getRegistro()));
-        
-        /*
         //bolha
         iniciaArquivos();
-        a = new Buble();
+        a = new Buble();///////////////////////////aqui
+        name = "Buble";
+        a.setArquivo(aOrd);
         a.OrdenaArquivo();
-        a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Buble", a.getRegistro()));
-        a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Buble", a.getRegistro()));
-        a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Buble", a.getRegistro()));
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
-        //insercao direta
-        iniciaArquivos();
-        a = new InserçãoDireta();
-        a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("InserçãoDireta", a.getRegistro()));
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("InserçãoDireta", a.getRegistro()));
-        a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("InserçãoDireta", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
-        //insercao binaria
-        iniciaArquivos();
-        a = new InserçãoBinaria();
-        a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("InserçãoBinaria", a.getRegistro()));
-        a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("InserçãoBinaria", a.getRegistro()));
-        a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("InserçãoBinaria", a.getRegistro()));
         
-        //buble
-        iniciaArquivos();
-        a = new Buble();
-        a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Buble", a.getRegistro()));
-        a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Buble", a.getRegistro()));
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Buble", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
         
         //Bucket
         iniciaArquivos();
-        a = new Bucket();
+        a = new Bucket();///////////////////////////aqui
+        name = "Bucket";
         a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Bucket", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Bucket", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Bucket", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         //Comb
         iniciaArquivos();
-        a = new Comb();
+        a = new Comb();///////////////////////////aqui
+        name = "Comb";
         a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Comb", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Comb", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Comb", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         
         //Count
         iniciaArquivos();
-        a = new Count();
+        a = new Count();///////////////////////////aqui
+        name = "Count";
         a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Count", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Count", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Count", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         //Gnome
         iniciaArquivos();
-        a = new Gnome();
+        a = new Gnome();///////////////////////////aqui
+        name = "Gnome";
         a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Gnome", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Gnome", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Gnome", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         //Heap
         iniciaArquivos();
-        a = new Heap();
+        a = new Heap();///////////////////////////aqui
+        name = "Heap";
         a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Heap", a.getRegistro()));
-        a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Heap", a.getRegistro()));
-        a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Heap", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
-        //Merge Primeira Impementação
-        iniciaArquivos();
-        a = new MergeP();
-        a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Merge Primeira Impementação", a.getRegistro()));
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Merge Primeira Impementação", a.getRegistro()));
-        a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Merge Primeira Impementação", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
         
-        //Merge Segunda Impementação
-        iniciaArquivos();
-        a = new MergeS();
-        a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Merge Segunda Impementação", a.getRegistro()));
-        a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Merge Segunda Impementação", a.getRegistro()));
-        a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Merge Segunda Impementação", a.getRegistro()));
         
-        //Quick com pivo
-        iniciaArquivos();
-        a = new QuickComPivo();
-        a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Quick com Pivo", a.getRegistro()));
-        a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Quick com Pivo", a.getRegistro()));
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Quick com Pivo", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+
+        //InsercaoBinaria
+        iniciaArquivos();
+        a = new InserçãoBinaria();///////////////////////////aqui
+        name = "InserçãoBinaria";
+        a.setArquivo(aOrd);
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
-        //Quick sem pivo
-        iniciaArquivos();
-        a = new QuickSemPivo();
-        a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Quick sem Pivo", a.getRegistro()));
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Quick sem Pivo", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Quick sem Pivo", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
+        //InsercaoDireta
+        iniciaArquivos();
+        a = new InserçãoDireta();///////////////////////////aqui
+        name = "InserçãoDireta";
+        a.setArquivo(aOrd);
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
+        a.setArquivo(aRandom);
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        a.setArquivo(aReverso);
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        //MergeP
+        iniciaArquivos();
+        a = new MergeP();///////////////////////////aqui
+        name = "MergeP";
+        a.setArquivo(aOrd);
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
+        a.setArquivo(aRandom);
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        a.setArquivo(aReverso);
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        //MergeS
+        iniciaArquivos();
+        a = new MergeS();///////////////////////////aqui
+        name = "MergeS";
+        a.setArquivo(aOrd);
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
+        a.setArquivo(aRandom);
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        a.setArquivo(aReverso);
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        //QuickComPivo
+        iniciaArquivos();
+        a = new QuickComPivo();///////////////////////////aqui
+        name = "QuickComPivo";
+        a.setArquivo(aOrd);
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
+        a.setArquivo(aRandom);
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        a.setArquivo(aReverso);
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
+        //QuickSemPivo
+        iniciaArquivos();
+        a = new QuickSemPivo();///////////////////////////aqui
+        name = "QuickSemPivo";
+        a.setArquivo(aOrd);
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
+        a.setArquivo(aRandom);
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        a.setArquivo(aReverso);
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         //Radix
         iniciaArquivos();
-        a = new Radix();
+        a = new Radix();///////////////////////////aqui
+        name = "Radix";
         a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Radix", a.getRegistro()));
-        a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Radix", a.getRegistro()));
-        a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Radix", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
         
-        //Selection
-        iniciaArquivos();
-        a = new SelectSort();
-        a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Selection", a.getRegistro()));
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Selection", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Selection", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        //SelectSort
+        iniciaArquivos();
+        a = new SelectSort();///////////////////////////aqui
+        name = "SelectSort";
+        a.setArquivo(aOrd);
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
+        a.setArquivo(aRandom);
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
+        a.setArquivo(aReverso);
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         //Shake
         iniciaArquivos();
-        a = new Shake();
+        a = new Shake();///////////////////////////aqui
+        name = "Shake";
         a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Shake", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Shake", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Shake", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         //Shell
         iniciaArquivos();
-        a = new Shell();
+        a = new Shell();///////////////////////////aqui
+        name = "Shell";
         a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Shell", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Shell", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Shell", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
         
         //Tim
         iniciaArquivos();
-        a = new Tim();
+        a = new Tim();///////////////////////////aqui
+        name = "Tim";
         a.setArquivo(aOrd);
-        tabelaOrdenada.getItems().add(new Saida("Tim", a.getRegistro()));
+        a.OrdenaArquivo();
+        a.getRegistro().setCompEqua((int)Math.pow(1024, 2));///
+        tabelaOrdenada.getItems().add(new Saida(name, a.getRegistro()));
+        
         a.setArquivo(aRandom);
-        tabelaRandom.getItems().add(new Saida("Tim", a.getRegistro()));
+        a.OrdenaArquivo();
+        tabelaRandom.getItems().add(new Saida(name, a.getRegistro()));
+        
+        
         a.setArquivo(aReverso);
-        tabelaReversa.getItems().add(new Saida("Tim", a.getRegistro()));
-        */
+        a.OrdenaArquivo();
+        tabelaReversa.getItems().add(new Saida(name, a.getRegistro()));
+        
     }
     
     private void iniciaArquivos()
